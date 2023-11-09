@@ -9,8 +9,10 @@
 <body>
     <h1>Sentiment Analysis</h1>
     <form action="/predict" method="post">
-        <label for="text">Enter text:</label>
-        <textarea name="text" id="text" cols="30" rows="10"></textarea>
+        <div class="mb-3">
+        <label for="text" class="form-label">Enter text:</label>
+        <textarea name="text" id="text" rows="4" class="form-control" style="border-color: black; width: 95%; margin-left: 2%;"></textarea>
+        </div>
         <br>
         <button type="submit">Predict</button>
     </form>

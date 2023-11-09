@@ -17,6 +17,12 @@ def get_sentiment_label(score):
     else:
         return "Uncertain"
 
+def get_sentiment_type(label):
+    if label == "LABEL_1":
+        return "Positive"
+    else:
+        return "Negative"
+
 #default home page route
 @app.route('/')
 def home():
@@ -30,6 +36,7 @@ def predict():
     sentiment = result[0]['label']
     score = result[0]['score']
     score = get_sentiment_label(score)
+    sentiment = get_sentiment_type(sentiment)
     return render_template('index.html', text=text, sentiment=sentiment, score=score)
 
 if __name__ == '__main__':
